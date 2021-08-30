@@ -18,26 +18,6 @@ module.exports = [
         items: [
           { text: '《JavaScript教程》', link: '/note/javascript/' },
           { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-          { text: '《ES6 教程》', link: '/note/es6/' },
-          { text: '《Vue》', link: '/note/vue/' },
-          { text: '《Vue3》', link: '/note/vue3/' },
-          { text: '《React》', link: '/note/react/' },
-          {
-            text: '《TypeScript 从零实现 axios》',
-            link: '/note/typescript-axios/',
-          },
-          {
-            text: '《Git》',
-            link: '/note/git/',
-          },
-          {
-            text: 'TypeScript',
-            link: '/pages/51afd6/',
-          },
-          {
-            text: 'JS设计模式总结',
-            link: '/pages/4643cd/',
-          },
         ],
       },
     ],
@@ -55,19 +35,12 @@ module.exports = [
     link: '/technology/',
     items: [
       { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-      { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-      { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
-      { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
     ],
   },
   {
     text: '更多',
     link: '/more/',
     items: [
-      { text: '学习', link: '/pages/f2a556/' },
-      { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-      { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
-      { text: '实用技巧', link: '/pages/baaa02/' },
       { text: '友情链接', link: '/friends/' },
     ],
   },
