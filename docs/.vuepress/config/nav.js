@@ -16,6 +16,7 @@ module.exports = [
       {
         text: '学习笔记',
         items: [
+          { text: 'Vue3笔记', link: '/note/vue3/' },
           { text: '《JavaScript教程》', link: '/note/javascript/' },
           { text: '《JavaScript高级程序设计》', link: '/note/js/' },
         ],
@@ -23,11 +24,10 @@ module.exports = [
     ],
   },
   {
-    text: '页面',
+    text: '后端',
     link: '/ui/',
     items: [
       { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-      { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
     ],
   },
   {
