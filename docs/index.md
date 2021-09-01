@@ -11,7 +11,7 @@ features: # 可选的
   - title: FE
     details: 以JavaScript为基础的恰饭工具
     link: /web/ # 可选
-    imgUrl: /img/js.svg # 可选
+    imgUrl: /img/web.png # 可选
   - title: BE
     details: 多少学点后端知识
     link: /ui/
