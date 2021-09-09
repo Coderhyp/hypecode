@@ -14,7 +14,7 @@ features: # 可选的
     imgUrl: /img/web.png # 可选
   - title: BE
     details: 多少学点后端知识
-    link: /ui/
+    link: /be/
     imgUrl: /img/ui.png
   - title: Technology
     details: 程序员的基本能力(大概也包括修电脑)

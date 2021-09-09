@@ -17,15 +17,13 @@ module.exports = [
         text: '学习笔记',
         items: [
           { text: 'Vue3笔记', link: '/note/vue3/' },
-          { text: '《JavaScript教程》', link: '/note/javascript/' },
-          { text: '《JavaScript高级程序设计》', link: '/note/js/' },
         ],
       },
     ],
   },
   {
     text: '后端',
-    link: '/ui/',
+    link: '/be/',
     items: [
       { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
     ],
@@ -41,6 +39,7 @@ module.exports = [
     text: '更多',
     link: '/more/',
     items: [
+      { text: '学习规划', link: '/plan/' },
       { text: '友情链接', link: '/friends/' },
     ],
   },
