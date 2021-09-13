@@ -7,16 +7,20 @@ module.exports = [
     items: [
       // 说明：以下所有link的值只是在相应md文件定义的永久链接（不是什么特殊生成的编码）。另外，注意结尾是有斜杠的
       {
-        text: '前端文章',
+        text: '前端基础笔记',
         items: [
-          { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
-          // { text: 'Vue', link: '/pages/5d463fbdb172d43b/' },
+          { text: 'JavaScript文章', link: '/note/Js/' },  
         ],
       },
       {
-        text: '学习笔记',
+        text: '前端框架笔记',
         items: [
           { text: 'Vue3笔记', link: '/note/vue3/' },
+        ],
+      },
+      {
+        text: '前端架构笔记',
+        items: [
         ],
       },
     ],
@@ -32,7 +36,7 @@ module.exports = [
     text: '技术',
     link: '/technology/',
     items: [
-      { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
+      { text: 'Git', link: '/pages/9a7ee40fc232253e/' },
     ],
   },
   {
@@ -41,6 +45,7 @@ module.exports = [
     items: [
       { text: '学习规划', link: '/plan/' },
       { text: '友情链接', link: '/friends/' },
+      { text: '面试记录', link: '/interview/' }
     ],
   },
   { text: '关于', link: '/about/' },
