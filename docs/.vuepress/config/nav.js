@@ -18,11 +18,6 @@ module.exports = [
           { text: 'Vue3笔记', link: '/note/vue3/' },
         ],
       },
-      {
-        text: '前端架构笔记',
-        items: [
-        ],
-      },
     ],
   },
   {
