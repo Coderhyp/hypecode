@@ -16,6 +16,7 @@ module.exports = [
         text: '前端框架笔记',
         items: [
           { text: 'Vue3笔记', link: '/note/vue3/' },
+          { text: 'Vue源码(理)笔记',link: '/note/vueRead/' }
         ],
       },
       // {
