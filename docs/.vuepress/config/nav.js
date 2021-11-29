@@ -10,6 +10,7 @@ module.exports = [
         text: '前端基础笔记',
         items: [
           { text: 'JavaScript文章', link: '/note/Js/' },  
+          { text: 'CSS文章', link: '/note/css/' },  
         ],
       },
       {
@@ -19,11 +20,12 @@ module.exports = [
           { text: 'Vue源码(理)笔记',link: '/note/vueRead/' }
         ],
       },
-      // {
-      //   text: '前端架构笔记',
-      //   items: [
-      //   ],
-      // },
+      {
+        text: '前端架构笔记',
+        items: [
+          { text: 'Vite文章',link: '/note/vite/' }
+        ],
+      },
     ],
   },
   {
