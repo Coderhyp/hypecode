@@ -29,6 +29,12 @@ jobs:
       - name: build page  # 步骤3
         run: npm install && npm run build
 
+     - name: Commit files
+        run: |
+          git config --local user.email "slimshadyedc@gmail.com"
+          git config --local user.name "Coderhyp"
+          git commit -m "Add changes" -a
+
       - name: GitHub Push
         # You may pin to the exact commit or the version.
         # uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6
