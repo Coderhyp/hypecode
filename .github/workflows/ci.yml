@@ -39,4 +39,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-page
           # Determines if force push is used
-          directory: ./dist
+          directory: ./docs/.vuepress/dist
