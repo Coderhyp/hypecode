@@ -36,6 +36,7 @@ jobs:
         with:
           # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
           # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-page
           # Determines if force push is used
           directory: ./dist
