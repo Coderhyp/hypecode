@@ -17,7 +17,8 @@ module.exports = [
         text: '前端框架笔记',
         items: [
           { text: 'Vue3笔记', link: '/note/vue3/' },
-          { text: 'Vue源码(理)笔记',link: '/note/vueRead/' }
+          { text: 'Vue源码(理)笔记',link: '/note/vueRead/' },
+          { text: 'echarts使用笔记',link: '/note/echarts/' }
         ],
       },
       {
@@ -39,7 +40,7 @@ module.exports = [
     text: '技术',
     link: '/technology/',
     items: [
-      { text: 'Git', link: '/pages/9a7ee40fc232253e/' },
+      { text: 'Git', link: '/pages/afde55/' },
     ],
   },
   {
@@ -52,15 +53,6 @@ module.exports = [
     ],
   },
   { text: '关于', link: '/about/' },
-  {
-    text: '收藏',
-    link: '/pages/beb6c0bd8a66cea6/',
-    // items: [
-    //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
-    //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-    //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
-    // ],
-  },
   {
     text: '索引',
     link: '/archives/',
