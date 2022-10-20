@@ -65,9 +65,6 @@ module.exports = [{
     link: '/interview/'
   }]
 }, {
-  text: '关于',
-  link: '/about/'
-}, {
   text: '索引',
   link: '/archives/',
   items: [{

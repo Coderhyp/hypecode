@@ -52,7 +52,6 @@ module.exports = [
       { text: '面试记录', link: '/interview/' }
     ],
   },
-  { text: '关于', link: '/about/' },
   {
     text: '索引',
     link: '/archives/',
