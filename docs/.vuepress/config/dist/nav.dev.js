@@ -35,6 +35,9 @@ module.exports = [{
     items: [{
       text: 'Vite文章',
       link: '/note/vite/'
+    }, {
+      text: 'pnpm文章',
+      link: '/note/pnpm/'
     }]
   }]
 }, {

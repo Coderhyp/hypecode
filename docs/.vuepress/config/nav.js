@@ -24,7 +24,8 @@ module.exports = [
       {
         text: '前端架构笔记',
         items: [
-          { text: 'Vite文章',link: '/note/vite/' }
+          { text: 'Vite文章',link: '/note/vite/' },
+          { text: 'pnpm文章',link: '/note/pnpm/' }
         ],
       },
     ],
