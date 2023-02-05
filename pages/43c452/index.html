@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Typescript面向对象 | Hypecode</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/hypecode/img/spike.JPG">
+    <script data-ad-client="ca-pub-7828333725993554" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/hypecode/assets/css/0.styles.f3c705dc.css" as="style"><link rel="preload" href="/hypecode/assets/js/app.d1e6079e.js" as="script"><link rel="preload" href="/hypecode/assets/js/2.42c5635d.js" as="script"><link rel="preload" href="/hypecode/assets/js/30.6a090e3a.js" as="script"><link rel="prefetch" href="/hypecode/assets/js/10.7a26dd66.js"><link rel="prefetch" href="/hypecode/assets/js/11.badb0833.js"><link rel="prefetch" href="/hypecode/assets/js/12.09cf1d27.js"><link rel="prefetch" href="/hypecode/assets/js/13.5983c0da.js"><link rel="prefetch" href="/hypecode/assets/js/14.d40e78ea.js"><link rel="prefetch" href="/hypecode/assets/js/15.289064c6.js"><link rel="prefetch" href="/hypecode/assets/js/16.5be3a87d.js"><link rel="prefetch" href="/hypecode/assets/js/17.064eecad.js"><link rel="prefetch" href="/hypecode/assets/js/18.a1aed9fa.js"><link rel="prefetch" href="/hypecode/assets/js/19.48e15587.js"><link rel="prefetch" href="/hypecode/assets/js/20.e3e54e0d.js"><link rel="prefetch" href="/hypecode/assets/js/21.cadd4adb.js"><link rel="prefetch" href="/hypecode/assets/js/22.d8564918.js"><link rel="prefetch" href="/hypecode/assets/js/23.75ff060a.js"><link rel="prefetch" href="/hypecode/assets/js/24.68410a50.js"><link rel="prefetch" href="/hypecode/assets/js/25.67bb082e.js"><link rel="prefetch" href="/hypecode/assets/js/26.76072c67.js"><link rel="prefetch" href="/hypecode/assets/js/27.26c3d398.js"><link rel="prefetch" href="/hypecode/assets/js/28.d1cda5ba.js"><link rel="prefetch" href="/hypecode/assets/js/29.c80f8059.js"><link rel="prefetch" href="/hypecode/assets/js/3.abc7f3cc.js"><link rel="prefetch" href="/hypecode/assets/js/31.da672c97.js"><link rel="prefetch" href="/hypecode/assets/js/32.7f8e732a.js"><link rel="prefetch" href="/hypecode/assets/js/33.579840c2.js"><link rel="prefetch" href="/hypecode/assets/js/34.c4be4bde.js"><link rel="prefetch" href="/hypecode/assets/js/35.02c839c7.js"><link rel="prefetch" href="/hypecode/assets/js/36.5b9559b7.js"><link rel="prefetch" href="/hypecode/assets/js/37.f20ced8c.js"><link rel="prefetch" href="/hypecode/assets/js/4.6d0cbcc3.js"><link rel="prefetch" href="/hypecode/assets/js/5.b86b3ec0.js"><link rel="prefetch" href="/hypecode/assets/js/6.e143f5c7.js"><link rel="prefetch" href="/hypecode/assets/js/7.1a33a0e9.js"><link rel="prefetch" href="/hypecode/assets/js/8.cf5d34dd.js"><link rel="prefetch" href="/hypecode/assets/js/9.166f5930.js">
+    <link rel="stylesheet" href="/hypecode/assets/css/0.styles.f3c705dc.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/hypecode/" class="home-link router-link-active"><img src="/hypecode/img/spike.JPG" alt="Hypecode" class="logo"> <span class="site-name can-hide">Hypecode</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/hypecode/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/hypecode/web/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>前端基础笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hypecode/note/Js/" class="nav-link">JavaScript文章</a></li><li class="dropdown-subitem"><a href="/hypecode/note/css/" class="nav-link">CSS文章</a></li><li class="dropdown-subitem"><a href="/hypecode/note/ts/" class="nav-link">Typescript文章</a></li></ul></li><li class="dropdown-item"><h4>前端框架笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hypecode/note/vue3/" class="nav-link">Vue3笔记</a></li><li class="dropdown-subitem"><a href="/hypecode/note/vueRead/" class="nav-link">Vue源码(理)笔记</a></li><li class="dropdown-subitem"><a href="/hypecode/note/echarts/" class="nav-link">echarts使用笔记</a></li></ul></li><li class="dropdown-item"><h4>前端架构笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hypecode/note/vite/" class="nav-link">Vite文章</a></li><li class="dropdown-subitem"><a href="/hypecode/note/pnpm/" class="nav-link">pnpm文章</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><a href="/hypecode/be/" class="link-title">后端</a> <span class="title" style="display:none;">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/pages/7c4f32/" class="nav-link">Node</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/hypecode/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/pages/afde55/" class="nav-link">Git</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/hypecode/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/plan/" class="nav-link">学习规划</a></li><li class="dropdown-item"><!----> <a href="/hypecode/friends/" class="nav-link">友情链接</a></li><li class="dropdown-item"><!----> <a href="/hypecode/interview/" class="nav-link">面试记录</a></li></ul></div></div><div class="nav-item"><a href="/hypecode/about/" class="nav-link">关于</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/hypecode/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/hypecode/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/hypecode/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/Coderhyp/hypecode" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://raw.githubusercontent.com/Coderhyp/Figure-Bed/master/blogImg/IMG_3778.5vranuugo5s0.JPG"> <div class="blogger-info"><h3>Hypeng</h3> <span>看看远处的雪山吧</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/hypecode/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/hypecode/web/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>前端基础笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hypecode/note/Js/" class="nav-link">JavaScript文章</a></li><li class="dropdown-subitem"><a href="/hypecode/note/css/" class="nav-link">CSS文章</a></li><li class="dropdown-subitem"><a href="/hypecode/note/ts/" class="nav-link">Typescript文章</a></li></ul></li><li class="dropdown-item"><h4>前端框架笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hypecode/note/vue3/" class="nav-link">Vue3笔记</a></li><li class="dropdown-subitem"><a href="/hypecode/note/vueRead/" class="nav-link">Vue源码(理)笔记</a></li><li class="dropdown-subitem"><a href="/hypecode/note/echarts/" class="nav-link">echarts使用笔记</a></li></ul></li><li class="dropdown-item"><h4>前端架构笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hypecode/note/vite/" class="nav-link">Vite文章</a></li><li class="dropdown-subitem"><a href="/hypecode/note/pnpm/" class="nav-link">pnpm文章</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><a href="/hypecode/be/" class="link-title">后端</a> <span class="title" style="display:none;">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/pages/7c4f32/" class="nav-link">Node</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/hypecode/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/pages/afde55/" class="nav-link">Git</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/hypecode/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/plan/" class="nav-link">学习规划</a></li><li class="dropdown-item"><!----> <a href="/hypecode/friends/" class="nav-link">友情链接</a></li><li class="dropdown-item"><!----> <a href="/hypecode/interview/" class="nav-link">面试记录</a></li></ul></div></div><div class="nav-item"><a href="/hypecode/about/" class="nav-link">关于</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/hypecode/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hypecode/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/hypecode/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/hypecode/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/Coderhyp/hypecode" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/hypecode/pages/5a3e15/" class="sidebar-link">TypeScript 基础</a></li><li><a href="/hypecode/pages/43c452/" aria-current="page" class="active sidebar-link">Typescript面向对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/hypecode/pages/43c452/#_1、类-class" class="sidebar-link">1、类（class）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/hypecode/pages/43c452/#定义类" class="sidebar-link">定义类</a></li><li class="sidebar-sub-header level3"><a href="/hypecode/pages/43c452/#类的继承" class="sidebar-link">类的继承</a></li><li class="sidebar-sub-header level3"><a href="/hypecode/pages/43c452/#属性的封装" class="sidebar-link">属性的封装</a></li></ul></li></ul></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/hypecode/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/hypecode/categories/?category=Typescript%20%E5%AD%A6%E4%B9%A0" title="分类" data-v-06225672>Typescript 学习</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/Coderhyp" target="_blank" title="作者" class="beLink" data-v-06225672>Hypeng</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-02-05</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">Typescript面向对象<!----></h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h1 id="ts的面向对象"><a href="#ts的面向对象" class="header-anchor">#</a> TS的面向对象</h1> <h2 id="_1、类-class"><a href="#_1、类-class" class="header-anchor">#</a> 1、类（class）</h2> <h3 id="定义类"><a href="#定义类" class="header-anchor">#</a> 定义类</h3> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    
+    <span class="token comment">// 直接定义的属性是实例属性，需要通过对象的 实例 去访问：     </span>
+    nick<span class="token operator">:</span><span class="token builtin">string</span><span class="token operator">=</span> <span class="token string">'hyp'</span>
+
+    <span class="token comment">// 使用static开头的属性是静态属性（类属性），可以直接通过类去访问</span>
+    <span class="token keyword">static</span> gender<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'female'</span>
+
+    <span class="token comment">// readonly开头的属性表示一个只读的属性无法修改</span>
+    <span class="token keyword">readonly</span> boy<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'ken'</span><span class="token punctuation">;</span>    
+
+    <span class="token comment">//如果方法以static开头则方法就是类方法，可以直接通过类去调用</span>
+    <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello 大家好！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> man <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>man<span class="token punctuation">.</span>nick<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>gender<span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="类的继承"><a href="#类的继承" class="header-anchor">#</a> 类的继承</h3> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code>  <span class="token comment">/*
+    * Dog extends Animal
+    *   - 此时，Animal被称为父类，Dog被称为子类
+    *   - 使用继承后，子类将会拥有父类所有的方法和属性
+    *   - 通过继承可以将多个类中共有的代码写在一个父类中，
+    *       这样只需要写一次即可让所有的子类都同时拥有父类中的属性和方法
+    *       如果希望在子类中添加一些父类中没有的属性或方法直接加就行
+    *   - 如果在子类中添加了和父类相同的方法，则子类方法会覆盖掉父类的方法
+    *       这种子类覆盖掉父类方法的形式，我们称为方法重写
+    *
+    * */</span>
+
+ <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+        <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'动物在叫~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+
+        age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+        <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 如果在子类中写了构造函数，在子类构造函数中必须对父类的构造函数进行调用</span>
+            <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用父类的构造函数</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 在类的方法中 super就表示当前类的父类</span>
+            <span class="token comment">//super.sayHello();</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'汪汪汪汪！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">'旺财'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dog<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h4 id="抽象类"><a href="#抽象类" class="header-anchor">#</a> 抽象类</h4> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code><span class="token comment">/*
+    *   以abstract开头的类是抽象类，
+    *       抽象类和其他类区别不大，只是不能用来创建对象
+    *       抽象类就是专门用来被继承的类
+    *
+    *       抽象类中可以添加抽象方法
+    * */</span>
+    <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+        <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 定义一个抽象方法</span>
+        <span class="token comment">// 抽象方法使用 abstract开头，没有方法体</span>
+        <span class="token comment">// 抽象方法只能定义在抽象类中，子类必须对抽象方法进行重写</span>
+        <span class="token keyword">abstract</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+
+        <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'汪汪汪汪！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+        <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'喵喵喵喵！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">'旺财'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dog<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h3 id="属性的封装"><a href="#属性的封装" class="header-anchor">#</a> 属性的封装</h3> <p>getter和setter的使用</p> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 定义一个表示人的类</span>
+    <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+        <span class="token comment">// TS可以在属性前添加属性的修饰符</span>
+        <span class="token comment">/*
+        *   public 修饰的属性可以在任意位置访问（修改） 默认值
+        *   private 私有属性，私有属性只能在类内部进行访问（修改）
+        *       - 通过在类中添加方法使得私有属性可以被外部访问
+        *   protected 受包含的属性，只能在当前类和当前类的子类中访问（修改）
+        *
+        * */</span>
+        <span class="token keyword">private</span> _name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span> _age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+        <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/*
+        *   getter方法用来读取属性
+        *   setter方法用来设置属性
+        *       - 它们被称为属性的存取器
+        * */</span>
+
+        <span class="token comment">// 定义方法，用来获取name属性</span>
+        <span class="token comment">// getName(){</span>
+        <span class="token comment">//     return this._name;</span>
+        <span class="token comment">// }</span>
+        <span class="token comment">//</span>
+        <span class="token comment">// // 定义方法，用来设置name属性</span>
+        <span class="token comment">// setName(value: string){</span>
+        <span class="token comment">//     this._name = value;</span>
+        <span class="token comment">// }</span>
+        <span class="token comment">//</span>
+        <span class="token comment">// getAge(){</span>
+        <span class="token comment">//     return this._age;</span>
+        <span class="token comment">// }</span>
+        <span class="token comment">//</span>
+        <span class="token comment">// setAge(value: number){</span>
+        <span class="token comment">//     // 判断年龄是否合法</span>
+        <span class="token comment">//     if(value &gt;= 0){</span>
+        <span class="token comment">//         this._age = value;</span>
+        <span class="token comment">//     }</span>
+        <span class="token comment">// }</span>
+
+        <span class="token comment">// TS中设置getter方法的方式</span>
+        <span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// console.log('get name()执行了！！');</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">set</span> <span class="token function">name</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> value<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">get</span> <span class="token function">age</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">set</span> <span class="token function">age</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> value
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> per <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'孙悟空'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/*
+    * 现在属性是在对象中设置的，属性可以任意的被修改,
+    *   属性可以任意被修改将会导致对象中的数据变得非常不安全
+    * */</span>
+
+    <span class="token comment">// per.setName('猪八戒');</span>
+    <span class="token comment">// per.setAge(-33);</span>
+
+    per<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'猪八戒'</span><span class="token punctuation">;</span>
+    per<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">33</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// console.log(per);</span>
+
+
+    <span class="token keyword">class</span> <span class="token class-name"><span class="token constant">A</span></span><span class="token punctuation">{</span>
+        <span class="token keyword">protected</span> num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+        <span class="token function">constructor</span><span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>num <span class="token operator">=</span> num<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">A</span></span><span class="token punctuation">{</span>
+
+        <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">B</span></span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// b.num = 33;</span>
+
+
+   <span class="token comment">/* class C{
+
+        name: string;
+        age: number
+
+        // 可以直接将属性定义在构造函数中
+        constructor(name: string, age: number) {
+            this.name = name;
+             this.age = age;
+        }
+
+    }*/</span>
+
+    <span class="token keyword">class</span> <span class="token class-name"><span class="token constant">C</span></span><span class="token punctuation">{</span>
+
+        <span class="token comment">// 可以直接将属性定义在构造函数中</span>
+        <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token keyword">public</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token keyword">public</span> age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">C</span></span><span class="token punctuation">(</span><span class="token string">'xxx'</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br></div></div></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Coderhyp/hypecode/edit/master/docs/Typescript 学习/01.Typescript面向对象.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2023/02/06, 00:33:25</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/hypecode/pages/5a3e15/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">TypeScript 基础</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/hypecode/pages/5a3e15/" class="prev">TypeScript 基础</a></span> <!----></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/hypecode/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/hypecode/pages/451ba9/"><div>
+            动态规划
+            <!----></div></a> <span class="date">12-18</span></dt></dl><dl><dd>02</dd> <dt><a href="/hypecode/pages/355504/"><div>
+            pnpm
+            <!----></div></a> <span class="date">11-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/hypecode/pages/5a3e15/"><div>
+            TypeScript 基础
+            <!----></div></a> <span class="date">08-26</span></dt></dl> <dl><dd></dd> <dt><a href="/hypecode/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:slimshadyedc@gmail.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/Coderhyp" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/playlist?id=132711917&amp;userid=108713986" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2021-2023
+    <span>Coderhyp | <a href="https://github.com/Coderhyp/hypecode" target="_blank">GITHUB</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/hypecode/assets/js/app.d1e6079e.js" defer></script><script src="/hypecode/assets/js/2.42c5635d.js" defer></script><script src="/hypecode/assets/js/30.6a090e3a.js" defer></script>
+  </body>
+</html>
