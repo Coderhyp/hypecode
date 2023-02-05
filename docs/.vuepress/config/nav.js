@@ -11,6 +11,7 @@ module.exports = [
         items: [
           { text: 'JavaScript文章', link: '/note/Js/' },  
           { text: 'CSS文章', link: '/note/css/' },  
+          { text: 'Typescript文章', link: '/note/ts/' },  
         ],
       },
       {
